@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Visiting Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+        .card {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            text-align: center;
+            font-size: 16px;
+        }
+        .card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        .card h2 {
+            margin: 0;
+            font-size: 1.6em;
+            color: #333;
+        }
+        .card p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .card a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+        .qr-code {
+            margin-top: 20px;
+        }
+        .social-media {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .social-media img {
+            width: 30px; /* Adjust icon size */
+            height: 30px;
+            transition: transform 0.3s;
+        }
+        .social-media img:hover {
+            transform: scale(1.1); /* Slightly enlarge on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <!-- Profile Image -->
+        <img src="{{ url_for('static', filename='img/.jpg') }}" alt="Profile Image">
+
+        <h2>{{ card['name'] }}</h2>
+        <p><strong>{{ card['title'] }}</strong> </p>
+        <p>📞 {{ card['phone'] }}</p>
+        <p>✉️ {{ card['email'] }}</p>
+        <p>🌐 <a href="{{ card['website'] }}" target="_blank">{{ card['website'] }}</a></p>
+
+        <!-- Social Media Icons -->
+        <div class="social-media">
+            <a href="{{ card['whatsapp'] }}" target="_blank" title="WhatsApp">
+                <img src="{{ url_for('static', filename='img/whatsapp.png') }}" alt="WhatsApp">
+            </a>
+            <a href="{{ card['instagram'] }}" target="_blank" title="Instagram">
+                <img src="{{ url_for('static', filename='img/instagram.png') }}" alt="Instagram">
+            </a>
+        </div>
+
+        <!-- QR Code -->
+        <div class="qr-code">
+            <p>Scan to Save Contact</p>
+            <img src="{{ url_for('static', filename='gi_card_qr.png') }}" alt="QR Code" width="150">
+        </div>
+    </div>
+</body>
+</html>

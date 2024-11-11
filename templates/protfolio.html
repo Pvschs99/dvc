@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style/style.css') }}">
+    <title>Digital Card</title>
+</head>
+<body>
+    <div class="card">
+        <!-- Profile Image -->
+        <div class="profile" style="background-image: url('{{ url_for('static', filename='img/shekar.jpg') }}');"></div>
+
+        <!-- Sidebar with Circle Buttons -->
+        <div class="sidebar">
+            <a class="circle-button" href="{{ url_for('aboutme') }}">About</a>
+            <a class="circle-button" href="{{ url_for('contactinfo') }}">Contact</a>
+            <a class="circle-button" href="{{ url_for('photo') }}">Gallery</a>
+        </div>
+
+        <!-- Card Content -->
+        <h2>{{ card['name'] }}</h2>
+        <p><strong>{{ card['title'] }}</strong> at <strong>{{ card['company'] }}</strong></p>
+        <p>📞 {{ card['phone'] }}</p>
+        <p>✉️ {{ card['email'] }}</p>
+        <p>🌐 <a href="{{ card['website'] }}" target="_blank">{{ card['website'] }}</a></p>
+
+        <!-- Social Media Icons -->
+        <div class="social-media">
+            <a href="{{ card['whatsapp'] }}" target="_blank" title="WhatsApp">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+            </a>
+            <a href="{{ card['instagram'] }}" target="_blank" title="Instagram">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
+            </a>
+            <a href="{{ card['linkedin'] }}" target="_blank" title="LinkedIn">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn">
+            </a>
+            <a href="{{ card['github'] }}" target="_blank" title="GitHub">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733609.png" alt="GitHub">
+            </a>
+        </div>
+    </div>
+</body>
+</html>

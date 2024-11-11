@@ -1,0 +1,32 @@
+{% extends 'home.html' %}
+
+{% block content %}
+<section class="contact">
+    <div class="container">
+        <h2>contact me </h2>
+        <div class="contact-wrapper">
+            <div class="contact-form">
+                <h3>Send a Message</h3>
+                <form>
+                    <div class="form-group">
+                        <input type="text" name="name"  placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="name"  placeholder="Your email">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your message"></textarea>
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p><i class="fas fa-phone"></i>+917993516529</p>
+                <p><i class="fas fa-envelop"></i>chandrashekarparepalli@gmail.com</p>
+                <p><i class="fas fa-map-maker-alt"></i>2-15-1,srirampuram,India</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
